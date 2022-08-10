@@ -1,0 +1,2135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="CRAB_0805">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.008760263654412 -0.000396839544223537 -0.00928841996798015"
+        rpy="0 0 0" />
+      <mass
+        value="0.487759555485896" />
+      <inertia
+        ixx="0.000838151997168944"
+        ixy="-3.80585710120713E-09"
+        ixz="1.31040513979038E-07"
+        iyy="0.00178486179739814"
+        iyz="3.05813375710027E-09"
+        izz="0.00251247821208881" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="RM_JIAN_LINK">
+    <inertial>
+      <origin
+        xyz="0.0244201219206724 2.42861286636753E-17 0.0014814150225653"
+        rpy="0 0 0" />
+      <mass
+        value="0.0112910941477822" />
+      <inertia
+        ixx="6.49102206619316E-06"
+        ixy="2.96805572151101E-21"
+        ixz="-1.02290693133488E-09"
+        iyy="6.04637024431847E-06"
+        iyz="3.59696902698881E-22"
+        izz="6.04706077477713E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RM_JIAN_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RM_JIAN_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RM_JIAN_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.001 -0.1015 -0.0205"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="RM_JIAN_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RM_ZHOU_LINK">
+    <inertial>
+      <origin
+        xyz="0.0396391594133572 0.00182574465334864 -0.00183117810438431"
+        rpy="0 0 0" />
+      <mass
+        value="0.0753858251987763" />
+      <inertia
+        ixx="1.16745222076052E-05"
+        ixy="5.94202594602449E-21"
+        ixz="-5.10171003053864E-21"
+        iyy="2.11125980635044E-05"
+        iyz="-3.51485012854345E-07"
+        izz="1.49159407182101E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RM_ZHOU_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RM_ZHOU_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RM_ZHOU_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.052 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="RM_JIAN_LINK" />
+    <child
+      link="RM_ZHOU_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RM_XI_LINK">
+    <inertial>
+      <origin
+        xyz="0.0932005324069179 -0.0010157129309824 0.000790208592210634"
+        rpy="0 0 0" />
+      <mass
+        value="0.0276700407550857" />
+      <inertia
+        ixx="5.1714549299637E-06"
+        ixy="9.42052533174234E-10"
+        ixz="2.22403454373457E-20"
+        iyy="2.93413790527495E-05"
+        iyz="6.02528977543007E-21"
+        izz="2.73009463290136E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RM_XI_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RM_XI_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RM_XI_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.08 0 0"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="RM_ZHOU_LINK" />
+    <child
+      link="RM_XI_LINK" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RM_R_LINK">
+    <inertial>
+      <origin
+        xyz="0 -5.55111512312578E-17 -2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="0"
+        ixz="1.79366203433577E-43"
+        iyy="1.67551608191456E-12"
+        iyz="1.54721492467482E-29"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RM_R_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RM_R_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RM_R_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.2095 0 0"
+      rpy="3.1416 1.5708 0" />
+    <parent
+      link="RM_XI_LINK" />
+    <child
+      link="RM_R_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RM_P_LINK">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 -5.55111512312578E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="-1.54721492467482E-29"
+        ixz="-1.79366203433577E-43"
+        iyy="1.67551608191456E-12"
+        iyz="0"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RM_P_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RM_P_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RM_P_JOINT"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 1.5708 0" />
+    <parent
+      link="RM_R_LINK" />
+    <child
+      link="RM_P_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RM_Y_LINK">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 1.11022302462516E-16 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="-1.79366203433577E-43"
+        ixz="1.54721492467482E-29"
+        iyy="1.67551608191456E-12"
+        iyz="0"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RM_Y_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RM_Y_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RM_Y_JOINT"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="RM_P_LINK" />
+    <child
+      link="RM_Y_LINK" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RF_JIAN_LINK">
+    <inertial>
+      <origin
+        xyz="0.0244201219206724 1.38777878078145E-17 0.0014814150225653"
+        rpy="0 0 0" />
+      <mass
+        value="0.0112910941477822" />
+      <inertia
+        ixx="6.49102206619316E-06"
+        ixy="8.470329472543E-22"
+        ixz="-1.02290693133536E-09"
+        iyy="6.04637024431847E-06"
+        iyz="2.21559360455071E-21"
+        izz="6.04706077477712E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RF_JIAN_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RF_JIAN_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_JIAN_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.11412 -0.091732 -0.0205"
+      rpy="0 0 -1.0472" />
+    <parent
+      link="base_link" />
+    <child
+      link="RF_JIAN_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RF_ZHOU_LINK">
+    <inertial>
+      <origin
+        xyz="0.0396391594133572 0.00182574465334865 -0.00183117810438431"
+        rpy="0 0 0" />
+      <mass
+        value="0.0753858251987762" />
+      <inertia
+        ixx="1.16745222076052E-05"
+        ixy="9.99680377421895E-21"
+        ixz="-3.81164826264435E-21"
+        iyy="2.11125980635043E-05"
+        iyz="-3.51485012854344E-07"
+        izz="1.49159407182101E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RF_ZHOU_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RF_ZHOU_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_ZHOU_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.052 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="RF_JIAN_LINK" />
+    <child
+      link="RF_ZHOU_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RF_XI_LINK">
+    <inertial>
+      <origin
+        xyz="0.093200532406918 -0.0010157129309824 0.000790208592210601"
+        rpy="0 0 0" />
+      <mass
+        value="0.0276700407550858" />
+      <inertia
+        ixx="5.17145492996371E-06"
+        ixy="9.42052533167247E-10"
+        ixz="1.60496100546135E-20"
+        iyy="2.93413790527494E-05"
+        iyz="2.45639554703747E-20"
+        izz="2.73009463290135E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RF_XI_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RF_XI_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_XI_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.08 0 0"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="RF_ZHOU_LINK" />
+    <child
+      link="RF_XI_LINK" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RF_R_LINK">
+    <inertial>
+      <origin
+        xyz="0 -5.55111512312578E-17 -8.32667268468867E-17"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="0"
+        ixz="1.79366203433577E-43"
+        iyy="1.67551608191456E-12"
+        iyz="3.09442984934322E-29"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RF_R_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RF_R_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_R_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.2095 0 0"
+      rpy="-1.5708 1.0472 1.5708" />
+    <parent
+      link="RF_XI_LINK" />
+    <child
+      link="RF_R_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RF_P_LINK">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="-3.09442984934322E-29"
+        ixz="-1.79366203433577E-43"
+        iyy="1.67551608191456E-12"
+        iyz="0"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RF_P_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RF_P_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_P_JOINT"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 1.5708 0" />
+    <parent
+      link="RF_R_LINK" />
+    <child
+      link="RF_P_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RF_Y_LINK">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 0 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="-1.79366203433577E-43"
+        ixz="3.09442984934322E-29"
+        iyy="1.67551608191456E-12"
+        iyz="0"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RF_Y_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RF_Y_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_Y_JOINT"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="RF_P_LINK" />
+    <child
+      link="RF_Y_LINK" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LF_JIAN_LINK">
+    <inertial>
+      <origin
+        xyz="0.0244201219206724 -1.38777878078145E-17 0.00148141502256527"
+        rpy="0 0 0" />
+      <mass
+        value="0.0112910941477822" />
+      <inertia
+        ixx="6.49102206619317E-06"
+        ixy="7.83505476210228E-21"
+        ixz="-1.02290693133999E-09"
+        iyy="6.04637024431849E-06"
+        iyz="3.37787049473538E-21"
+        izz="6.04706077477715E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LF_JIAN_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LF_JIAN_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_JIAN_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.11412 0.091732 -0.0205"
+      rpy="0 0 1.0472" />
+    <parent
+      link="base_link" />
+    <child
+      link="LF_JIAN_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LF_ZHOU_LINK">
+    <inertial>
+      <origin
+        xyz="0.0396391594133572 0.00182574465334865 -0.00183117810438427"
+        rpy="0 0 0" />
+      <mass
+        value="0.0753858251987763" />
+      <inertia
+        ixx="1.16745222076053E-05"
+        ixy="8.34482585687389E-21"
+        ixz="-8.470329472543E-22"
+        iyy="2.11125980635044E-05"
+        iyz="-3.5148501285434E-07"
+        izz="1.49159407182101E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LF_ZHOU_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LF_ZHOU_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_ZHOU_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.052 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="LF_JIAN_LINK" />
+    <child
+      link="LF_ZHOU_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LF_XI_LINK">
+    <inertial>
+      <origin
+        xyz="0.0932005324069179 -0.00101571293098254 0.000790208592210642"
+        rpy="0 0 0" />
+      <mass
+        value="0.0276700407550858" />
+      <inertia
+        ixx="5.1714549299637E-06"
+        ixy="9.42052533169355E-10"
+        ixz="1.76589769786186E-20"
+        iyy="2.93413790527495E-05"
+        iyz="0"
+        izz="2.73009463290136E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LF_XI_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LF_XI_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_XI_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.08 0 0"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="LF_ZHOU_LINK" />
+    <child
+      link="LF_XI_LINK" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LF_R_LINK">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 2.77555756156289E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="0"
+        ixz="1.79366203433577E-43"
+        iyy="1.67551608191456E-12"
+        iyz="3.09442984934322E-29"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LF_R_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LF_R_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_R_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.2095 0 0"
+      rpy="-1.5708 -1.0472 1.5708" />
+    <parent
+      link="LF_XI_LINK" />
+    <child
+      link="LF_R_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LF_P_LINK">
+    <inertial>
+      <origin
+        xyz="0 2.77555756156289E-17 2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="-3.09442984934322E-29"
+        ixz="-1.79366203433577E-43"
+        iyy="1.67551608191456E-12"
+        iyz="0"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LF_P_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LF_P_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_P_JOINT"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 1.5708 0" />
+    <parent
+      link="LF_R_LINK" />
+    <child
+      link="LF_P_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LF_Y_LINK">
+    <inertial>
+      <origin
+        xyz="0 1.38777878078145E-16 -2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="-1.79366203433577E-43"
+        ixz="3.09442984934322E-29"
+        iyy="1.67551608191456E-12"
+        iyz="0"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LF_Y_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LF_Y_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LF_Y_JOINT"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="LF_P_LINK" />
+    <child
+      link="LF_Y_LINK" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LM_JIAN_LINK">
+    <inertial>
+      <origin
+        xyz="0.0244201219206724 0 0.0014814150225653"
+        rpy="0 0 0" />
+      <mass
+        value="0.0112910941477822" />
+      <inertia
+        ixx="6.49102206619317E-06"
+        ixy="2.07089857546024E-21"
+        ixz="-1.02290693133586E-09"
+        iyy="6.04637024431848E-06"
+        iyz="1.52776577782859E-21"
+        izz="6.04706077477715E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LM_JIAN_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LM_JIAN_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LM_JIAN_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.001 0.1015 -0.0205"
+      rpy="0 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="LM_JIAN_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LM_ZHOU_LINK">
+    <inertial>
+      <origin
+        xyz="0.0396391594133572 0.00182574465334819 -0.00183117810438437"
+        rpy="0 0 0" />
+      <mass
+        value="0.0753858251987764" />
+      <inertia
+        ixx="1.16745222076053E-05"
+        ixy="1.18503643541483E-19"
+        ixz="7.16012690756494E-22"
+        iyy="2.11125980635044E-05"
+        iyz="-3.51485012854346E-07"
+        izz="1.49159407182101E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LM_ZHOU_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LM_ZHOU_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LM_ZHOU_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.052 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="LM_JIAN_LINK" />
+    <child
+      link="LM_ZHOU_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LM_XI_LINK">
+    <inertial>
+      <origin
+        xyz="0.0932005324069179 -0.00101571293098252 0.000790208592210656"
+        rpy="0 0 0" />
+      <mass
+        value="0.0276700407550857" />
+      <inertia
+        ixx="5.17145492996367E-06"
+        ixy="9.42052533166694E-10"
+        ixz="2.11695652161137E-20"
+        iyy="2.93413790527494E-05"
+        iyz="1.14203509269988E-20"
+        izz="2.73009463290135E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LM_XI_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LM_XI_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LM_XI_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.08 0 0"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="LM_ZHOU_LINK" />
+    <child
+      link="LM_XI_LINK" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LM_R_LINK">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="0"
+        ixz="1.79366203433577E-43"
+        iyy="1.67551608191456E-12"
+        iyz="1.54721492467482E-29"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LM_R_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LM_R_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LM_R_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.2095 0 0"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="LM_XI_LINK" />
+    <child
+      link="LM_R_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LM_P_LINK">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="-1.54721492467482E-29"
+        ixz="-1.79366203433577E-43"
+        iyy="1.67551608191456E-12"
+        iyz="0"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LM_P_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LM_P_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LM_P_JOINT"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 1.5708 0" />
+    <parent
+      link="LM_R_LINK" />
+    <child
+      link="LM_P_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LM_Y_LINK">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="-1.79366203433577E-43"
+        ixz="1.54721492467482E-29"
+        iyy="1.67551608191456E-12"
+        iyz="0"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LM_Y_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LM_Y_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LM_Y_JOINT"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="LM_P_LINK" />
+    <child
+      link="LM_Y_LINK" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LB_JIAN_LINK">
+    <inertial>
+      <origin
+        xyz="0.0244201219206724 -1.38777878078145E-17 0.0014814150225653"
+        rpy="0 0 0" />
+      <mass
+        value="0.0112910941477822" />
+      <inertia
+        ixx="6.49102206619318E-06"
+        ixy="-1.6940658945086E-21"
+        ixz="-1.02290693133348E-09"
+        iyy="6.04637024431849E-06"
+        iyz="-8.13120837817316E-24"
+        izz="6.04706077477715E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LB_JIAN_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LB_JIAN_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LB_JIAN_JOINT"
+    type="revolute">
+    <origin
+      xyz="-0.11412 0.091732 -0.0205"
+      rpy="0 0 2.0944" />
+    <parent
+      link="base_link" />
+    <child
+      link="LB_JIAN_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LB_ZHOU_LINK">
+    <inertial>
+      <origin
+        xyz="0.0396391594133572 0.00182574465334864 -0.00183117810438425"
+        rpy="0 0 0" />
+      <mass
+        value="0.0753858251987763" />
+      <inertia
+        ixx="1.16745222076052E-05"
+        ixy="6.5334061760715E-21"
+        ixz="-2.96461531539005E-21"
+        iyy="2.11125980635044E-05"
+        iyz="-3.51485012854342E-07"
+        izz="1.49159407182101E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LB_ZHOU_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LB_ZHOU_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LB_ZHOU_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.052 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="LB_JIAN_LINK" />
+    <child
+      link="LB_ZHOU_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LB_XI_LINK">
+    <inertial>
+      <origin
+        xyz="0.0932005324069179 -0.00101571293098246 0.000790208592210559"
+        rpy="0 0 0" />
+      <mass
+        value="0.0276700407550857" />
+      <inertia
+        ixx="5.17145492996368E-06"
+        ixy="9.42052533170927E-10"
+        ixz="1.79601091811779E-20"
+        iyy="2.93413790527495E-05"
+        iyz="1.6940658945086E-20"
+        izz="2.73009463290136E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LB_XI_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LB_XI_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LB_XI_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.08 0 0"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="LB_ZHOU_LINK" />
+    <child
+      link="LB_XI_LINK" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LB_R_LINK">
+    <inertial>
+      <origin
+        xyz="-1.11022302462516E-16 8.32667268468867E-17 -8.32667268468867E-17"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="0"
+        ixz="1.79366203433577E-43"
+        iyy="1.67551608191456E-12"
+        iyz="3.09442984934322E-29"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LB_R_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LB_R_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LB_R_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.2095 0 0"
+      rpy="1.5708 -1.0472 -1.5708" />
+    <parent
+      link="LB_XI_LINK" />
+    <child
+      link="LB_R_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LB_P_LINK">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-17 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="-3.09442984934322E-29"
+        ixz="-1.79366203433577E-43"
+        iyy="1.67551608191456E-12"
+        iyz="0"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LB_P_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LB_P_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LB_P_JOINT"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 1.5708 0" />
+    <parent
+      link="LB_R_LINK" />
+    <child
+      link="LB_P_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="LB_Y_LINK">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 5.27355936696949E-16 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="-1.79366203433577E-43"
+        ixz="3.09442984934322E-29"
+        iyy="1.67551608191456E-12"
+        iyz="0"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LB_Y_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/LB_Y_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LB_Y_JOINT"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="LB_P_LINK" />
+    <child
+      link="LB_Y_LINK" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RB_JIAN_LINK">
+    <inertial>
+      <origin
+        xyz="0.0244201219206724 0 0.0014814150225653"
+        rpy="0 0 0" />
+      <mass
+        value="0.0112910941477823" />
+      <inertia
+        ixx="6.49102206619319E-06"
+        ixy="-1.90582413132218E-21"
+        ixz="-1.02290693133287E-09"
+        iyy="6.0463702443185E-06"
+        iyz="-1.38801160857731E-21"
+        izz="6.04706077477716E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RB_JIAN_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RB_JIAN_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RB_JIAN_JOINT"
+    type="revolute">
+    <origin
+      xyz="-0.11412 -0.091732 -0.0205"
+      rpy="0 0 -2.0944" />
+    <parent
+      link="base_link" />
+    <child
+      link="RB_JIAN_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RB_ZHOU_LINK">
+    <inertial>
+      <origin
+        xyz="0.0396391594133571 0.00182574465334864 -0.00183117810438424"
+        rpy="0 0 0" />
+      <mass
+        value="0.0753858251987762" />
+      <inertia
+        ixx="1.16745222076052E-05"
+        ixy="4.74426006593842E-21"
+        ixz="-5.50571415715295E-21"
+        iyy="2.11125980635044E-05"
+        iyz="-3.51485012854343E-07"
+        izz="1.49159407182101E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RB_ZHOU_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RB_ZHOU_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RB_ZHOU_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.052 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="RB_JIAN_LINK" />
+    <child
+      link="RB_ZHOU_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RB_XI_LINK">
+    <inertial>
+      <origin
+        xyz="0.0932005324069178 -0.00101571293098257 0.000790208592210795"
+        rpy="0 0 0" />
+      <mass
+        value="0.0276700407550858" />
+      <inertia
+        ixx="5.17145492996372E-06"
+        ixy="9.42052533165286E-10"
+        ixz="2.17245663775454E-20"
+        iyy="2.93413790527495E-05"
+        iyz="1.6940658945086E-21"
+        izz="2.73009463290136E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RB_XI_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RB_XI_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RB_XI_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.08 0 0"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="RB_ZHOU_LINK" />
+    <child
+      link="RB_XI_LINK" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RB_R_LINK">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 -5.55111512312578E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="0"
+        ixz="1.79366203433577E-43"
+        iyy="1.67551608191456E-12"
+        iyz="3.09442984934322E-29"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RB_R_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RB_R_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RB_R_JOINT"
+    type="revolute">
+    <origin
+      xyz="0.2095 0 0"
+      rpy="1.5708 1.0472 -1.5708" />
+    <parent
+      link="RB_XI_LINK" />
+    <child
+      link="RB_R_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RB_P_LINK">
+    <inertial>
+      <origin
+        xyz="0 -5.55111512312578E-17 -2.77555756156289E-17"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="-3.09442984934322E-29"
+        ixz="-1.79366203433577E-43"
+        iyy="1.67551608191456E-12"
+        iyz="0"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RB_P_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RB_P_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RB_P_JOINT"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 1.5708 0" />
+    <parent
+      link="RB_R_LINK" />
+    <child
+      link="RB_P_LINK" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="RB_Y_LINK">
+    <inertial>
+      <origin
+        xyz="0 -2.77555756156289E-17 5.55111512312578E-17"
+        rpy="0 0 0" />
+      <mass
+        value="4.18879020478639E-06" />
+      <inertia
+        ixx="1.67551608191456E-12"
+        ixy="-1.79366203433577E-43"
+        ixz="3.09442984934322E-29"
+        iyy="1.67551608191456E-12"
+        iyz="0"
+        izz="1.67551608191456E-12" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RB_Y_LINK.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://CRAB_0805/meshes/RB_Y_LINK.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RB_Y_JOINT"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="RB_P_LINK" />
+    <child
+      link="RB_Y_LINK" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>
