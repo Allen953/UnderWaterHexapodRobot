@@ -592,9 +592,9 @@ int main(int argc,char* argv[])
         result_rblast=result_rbnow;
         r.sleep();
     }
-	// fclose(fp);
-	// for(int i=0;i<=1000;i++)
-	// 	r.sleep();
+	fclose(fp);
+	for(int i=0;i<=1000;i++)
+		r.sleep();
     }
     return 0;
  
