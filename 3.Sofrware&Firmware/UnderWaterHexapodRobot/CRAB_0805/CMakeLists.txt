@@ -38,6 +38,9 @@ target_link_libraries(CRAB_0805 ${catkin_LIBRARIES} ${orocos_kdl_LIBRARIES})
 add_executable(CRAB_0805_FluctuateStep src/CRAB_0805_FluctuateStep.cpp)
 target_link_libraries(CRAB_0805_FluctuateStep ${catkin_LIBRARIES} ${orocos_kdl_LIBRARIES})
 
+add_executable(CRAB_0805_FluctuateStepHor src/CRAB_0805_FluctuateStepHor.cpp)
+target_link_libraries(CRAB_0805_FluctuateStepHor ${catkin_LIBRARIES} ${orocos_kdl_LIBRARIES})
+
 foreach(dir config launch meshes urdf)
 	install(DIRECTORY ${dir}/
 		DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})

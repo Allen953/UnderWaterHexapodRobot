@@ -23,7 +23,7 @@
 
 #define pi 3.141592653
 
-#define stepx 0.017
+#define stepx 0.015
 #define stepz 0.01
 
 int main(int argc,char* argv[])
@@ -217,43 +217,43 @@ int main(int argc,char* argv[])
     KDL::JntArray result_rbnow(6);//now
 
     result_rmlast(0)=0;
-    result_rmlast(1)=-pi/4;
-    result_rmlast(2)=-pi/4;
+    result_rmlast(1)=-pi/6;
+    result_rmlast(2)=-pi/6;
     result_rmlast(3)=0;
     result_rmlast(4)=0;
     result_rmlast(5)=0;
 
     result_rflast(0)=0;
-    result_rflast(1)=-pi/4;
-    result_rflast(2)=-pi/4;
+    result_rflast(1)=-pi/6;
+    result_rflast(2)=-pi/6;
     result_rflast(3)=0;
     result_rflast(4)=0;
     result_rflast(5)=0;
 
     result_lflast(0)=0;
-    result_lflast(1)=-pi/4;
-    result_lflast(2)=-pi/4;
+    result_lflast(1)=-pi/6;
+    result_lflast(2)=-pi/6;
     result_lflast(3)=0;
     result_lflast(4)=0;
     result_lflast(5)=0;
 
     result_lmlast(0)=0;
-    result_lmlast(1)=-pi/4;
-    result_lmlast(2)=-pi/4;
+    result_lmlast(1)=-pi/6;
+    result_lmlast(2)=-pi/6;
     result_lmlast(3)=0;
     result_lmlast(4)=0;
     result_lmlast(5)=0;
 
     result_lblast(0)=0;
-    result_lblast(1)=-pi/4;
-    result_lblast(2)=-pi/4;
+    result_lblast(1)=-pi/6;
+    result_lblast(2)=-pi/6;
     result_lblast(3)=0;
     result_lblast(4)=0;
     result_lblast(5)=0;
 
     result_rblast(0)=0;
-    result_rblast(1)=-pi/4;
-    result_rblast(2)=-pi/4;
+    result_rblast(1)=-pi/6;
+    result_rblast(2)=-pi/6;
     result_rblast(3)=0;
     result_rblast(4)=0;
     result_rblast(5)=0;
@@ -371,31 +371,31 @@ int main(int argc,char* argv[])
     for(int i=1;i<=20;i++)
     { 
         double t=2*pi*i/20;
-        double x=stepx*(t-sin(t));
+        double y=stepx*(t-sin(t));
         double z=stepz*(1-cos(t));
         //右边
-        end_effector_pose_rm_now.p.data[0]=end_effector_pose_rmstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*5+x;
+        end_effector_pose_rm_now.p.data[1]=end_effector_pose_rmstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*5+y;
         end_effector_pose_rm_now.p.data[2]=end_effector_pose_rmstart.p.data[2]+z;
         int rc_rm = tracik_rm_solver.CartToJnt(result_rmlast, end_effector_pose_rm_now, result_rmnow);
 
-        end_effector_pose_rf_now.p.data[0]=end_effector_pose_rfstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*1-x*0.2;
+        end_effector_pose_rf_now.p.data[1]=end_effector_pose_rfstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*1-y*0.2;
         end_effector_pose_rf_now.p.data[2]=end_effector_pose_rfstart.p.data[2];
         int rc_rf = tracik_rf_solver.CartToJnt(result_rflast, end_effector_pose_rf_now, result_rfnow);
         print_frame_lambda(end_effector_pose_rf_now);
 
-        end_effector_pose_lf_now.p.data[0]=end_effector_pose_lfstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*4-x*0.2;
+        end_effector_pose_lf_now.p.data[1]=end_effector_pose_lfstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*4-y*0.2;
         end_effector_pose_lf_now.p.data[2]=end_effector_pose_lfstart.p.data[2];
         int rc_lf = tracik_lf_solver.CartToJnt(result_lflast, end_effector_pose_lf_now, result_lfnow);
 
-        end_effector_pose_lm_now.p.data[0]=end_effector_pose_lmstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*2-x*0.2;
+        end_effector_pose_lm_now.p.data[1]=end_effector_pose_lmstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*2-y*0.2;
         end_effector_pose_lm_now.p.data[2]=end_effector_pose_lmstart.p.data[2];
         int rc_lm = tracik_lm_solver.CartToJnt(result_lmlast, end_effector_pose_lm_now, result_lmnow);
 
-        end_effector_pose_lb_now.p.data[0]=end_effector_pose_lbstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*3-x*0.2;
+        end_effector_pose_lb_now.p.data[1]=end_effector_pose_lbstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*3-y*0.2;
         end_effector_pose_lb_now.p.data[2]=end_effector_pose_lbstart.p.data[2];
         int rc_lb = tracik_lb_solver.CartToJnt(result_lblast, end_effector_pose_lb_now, result_lbnow);
 
-        end_effector_pose_rb_now.p.data[0]=end_effector_pose_rbstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*0-x*0.2;
+        end_effector_pose_rb_now.p.data[1]=end_effector_pose_rbstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*0-y*0.2;
         end_effector_pose_rb_now.p.data[2]=end_effector_pose_rbstart.p.data[2];
         int rc_rb= tracik_rb_solver.CartToJnt(result_rblast, end_effector_pose_rb_now, result_rbnow);
 
@@ -487,31 +487,31 @@ int main(int argc,char* argv[])
    for(int i=1;i<=20;i++)
     { 
         double t=2*pi*i/20;
-        double x=stepx*(t-sin(t));
+        double y=stepx*(t-sin(t));
         double z=stepz*(1-cos(t));
         //右边
-        end_effector_pose_rm_now.p.data[0]=end_effector_pose_rmstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*0-x*0.2;
+        end_effector_pose_rm_now.p.data[1]=end_effector_pose_rmstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*0-y*0.2;
         end_effector_pose_rm_now.p.data[2]=end_effector_pose_rmstart.p.data[2];
         int rc_rm = tracik_rm_solver.CartToJnt(result_rmlast, end_effector_pose_rm_now, result_rmnow);
 
-        end_effector_pose_rf_now.p.data[0]=end_effector_pose_rfstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*2-x*0.2;
+        end_effector_pose_rf_now.p.data[1]=end_effector_pose_rfstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*2-y*0.2;
         end_effector_pose_rf_now.p.data[2]=end_effector_pose_rfstart.p.data[2];
         int rc_rf = tracik_rf_solver.CartToJnt(result_rflast, end_effector_pose_rf_now, result_rfnow);
         print_frame_lambda(end_effector_pose_rf_now);
 
-        end_effector_pose_lf_now.p.data[0]=end_effector_pose_lfstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*5+x;
+        end_effector_pose_lf_now.p.data[1]=end_effector_pose_lfstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*5+y;
         end_effector_pose_lf_now.p.data[2]=end_effector_pose_lfstart.p.data[2]+z;
         int rc_lf = tracik_lf_solver.CartToJnt(result_lflast, end_effector_pose_lf_now, result_lfnow);
 
-        end_effector_pose_lm_now.p.data[0]=end_effector_pose_lmstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*3-x*0.2;
+        end_effector_pose_lm_now.p.data[1]=end_effector_pose_lmstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*3-y*0.2;
         end_effector_pose_lm_now.p.data[2]=end_effector_pose_lmstart.p.data[2];
         int rc_lm = tracik_lm_solver.CartToJnt(result_lmlast, end_effector_pose_lm_now, result_lmnow);
 
-        end_effector_pose_lb_now.p.data[0]=end_effector_pose_lbstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*4-x*0.2;
+        end_effector_pose_lb_now.p.data[1]=end_effector_pose_lbstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*4-y*0.2;
         end_effector_pose_lb_now.p.data[2]=end_effector_pose_lbstart.p.data[2];
         int rc_lb = tracik_lb_solver.CartToJnt(result_lblast, end_effector_pose_lb_now, result_lbnow);
 
-        end_effector_pose_rb_now.p.data[0]=end_effector_pose_rbstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*1-x*0.2;
+        end_effector_pose_rb_now.p.data[1]=end_effector_pose_rbstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*1-y*0.2;
         end_effector_pose_rb_now.p.data[2]=end_effector_pose_rbstart.p.data[2];
         int rc_rb= tracik_rb_solver.CartToJnt(result_rblast, end_effector_pose_rb_now, result_rbnow);
 
@@ -603,31 +603,31 @@ int main(int argc,char* argv[])
       for(int i=1;i<=20;i++)
     { 
         double t=2*pi*i/20;
-        double x=stepx*(t-sin(t));
+        double y=stepx*(t-sin(t));
         double z=stepz*(1-cos(t));
         //右边
-        end_effector_pose_rm_now.p.data[0]=end_effector_pose_rmstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*1-x*0.2;
+        end_effector_pose_rm_now.p.data[1]=end_effector_pose_rmstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*1-y*0.2;
         end_effector_pose_rm_now.p.data[2]=end_effector_pose_rmstart.p.data[2];
         int rc_rm = tracik_rm_solver.CartToJnt(result_rmlast, end_effector_pose_rm_now, result_rmnow);
 
-        end_effector_pose_rf_now.p.data[0]=end_effector_pose_rfstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*3-x*0.2;
+        end_effector_pose_rf_now.p.data[1]=end_effector_pose_rfstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*3-y*0.2;
         end_effector_pose_rf_now.p.data[2]=end_effector_pose_rfstart.p.data[2];
         int rc_rf = tracik_rf_solver.CartToJnt(result_rflast, end_effector_pose_rf_now, result_rfnow);
         print_frame_lambda(end_effector_pose_rf_now);
 
-        end_effector_pose_lf_now.p.data[0]=end_effector_pose_lfstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*0-x*0.2;
+        end_effector_pose_lf_now.p.data[1]=end_effector_pose_lfstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*0-y*0.2;
         end_effector_pose_lf_now.p.data[2]=end_effector_pose_lfstart.p.data[2];
         int rc_lf = tracik_lf_solver.CartToJnt(result_lflast, end_effector_pose_lf_now, result_lfnow);
 
-        end_effector_pose_lm_now.p.data[0]=end_effector_pose_lmstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*4-x*0.2;
+        end_effector_pose_lm_now.p.data[1]=end_effector_pose_lmstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*4-y*0.2;
         end_effector_pose_lm_now.p.data[2]=end_effector_pose_lmstart.p.data[2];
         int rc_lm = tracik_lm_solver.CartToJnt(result_lmlast, end_effector_pose_lm_now, result_lmnow);
 
-        end_effector_pose_lb_now.p.data[0]=end_effector_pose_lbstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*5+x;
+        end_effector_pose_lb_now.p.data[1]=end_effector_pose_lbstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*5+y;
         end_effector_pose_lb_now.p.data[2]=end_effector_pose_lbstart.p.data[2]+z;
         int rc_lb = tracik_lb_solver.CartToJnt(result_lblast, end_effector_pose_lb_now, result_lbnow);
 
-        end_effector_pose_rb_now.p.data[0]=end_effector_pose_rbstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*2-x*0.2;
+        end_effector_pose_rb_now.p.data[1]=end_effector_pose_rbstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*2-y*0.2;
         end_effector_pose_rb_now.p.data[2]=end_effector_pose_rbstart.p.data[2];
         int rc_rb= tracik_rb_solver.CartToJnt(result_rblast, end_effector_pose_rb_now, result_rbnow);
 
@@ -719,31 +719,31 @@ int main(int argc,char* argv[])
     for(int i=1;i<=20;i++)
     { 
         double t=2*pi*i/20;
-        double x=stepx*(t-sin(t));
+        double y=stepx*(t-sin(t));
         double z=stepz*(1-cos(t));
         //右边
-        end_effector_pose_rm_now.p.data[0]=end_effector_pose_rmstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*2-x*0.2;
+        end_effector_pose_rm_now.p.data[1]=end_effector_pose_rmstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*2-y*0.2;
         end_effector_pose_rm_now.p.data[2]=end_effector_pose_rmstart.p.data[2];
         int rc_rm = tracik_rm_solver.CartToJnt(result_rmlast, end_effector_pose_rm_now, result_rmnow);
 
-        end_effector_pose_rf_now.p.data[0]=end_effector_pose_rfstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*4-x*0.2;
+        end_effector_pose_rf_now.p.data[1]=end_effector_pose_rfstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*4-y*0.2;
         end_effector_pose_rf_now.p.data[2]=end_effector_pose_rfstart.p.data[2];
         int rc_rf = tracik_rf_solver.CartToJnt(result_rflast, end_effector_pose_rf_now, result_rfnow);
         print_frame_lambda(end_effector_pose_rf_now);
 
-        end_effector_pose_lf_now.p.data[0]=end_effector_pose_lfstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*1-x*0.2;
+        end_effector_pose_lf_now.p.data[1]=end_effector_pose_lfstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*1-y*0.2;
         end_effector_pose_lf_now.p.data[2]=end_effector_pose_lfstart.p.data[2];
         int rc_lf = tracik_lf_solver.CartToJnt(result_lflast, end_effector_pose_lf_now, result_lfnow);
 
-        end_effector_pose_lm_now.p.data[0]=end_effector_pose_lmstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*5+x;
+        end_effector_pose_lm_now.p.data[1]=end_effector_pose_lmstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*5+y;
         end_effector_pose_lm_now.p.data[2]=end_effector_pose_lmstart.p.data[2]+z;
         int rc_lm = tracik_lm_solver.CartToJnt(result_lmlast, end_effector_pose_lm_now, result_lmnow);
 
-        end_effector_pose_lb_now.p.data[0]=end_effector_pose_lbstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*0-x*0.2;
+        end_effector_pose_lb_now.p.data[1]=end_effector_pose_lbstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*0-y*0.2;
         end_effector_pose_lb_now.p.data[2]=end_effector_pose_lbstart.p.data[2];
         int rc_lb = tracik_lb_solver.CartToJnt(result_lblast, end_effector_pose_lb_now, result_lbnow);
 
-        end_effector_pose_rb_now.p.data[0]=end_effector_pose_rbstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*3-x*0.2;
+        end_effector_pose_rb_now.p.data[1]=end_effector_pose_rbstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*3-y*0.2;
         end_effector_pose_rb_now.p.data[2]=end_effector_pose_rbstart.p.data[2];
         int rc_rb= tracik_rb_solver.CartToJnt(result_rblast, end_effector_pose_rb_now, result_rbnow);
 
@@ -835,31 +835,31 @@ int main(int argc,char* argv[])
     for(int i=1;i<=20;i++)
     { 
         double t=2*pi*i/20;
-        double x=stepx*(t-sin(t));
+        double y=stepx*(t-sin(t));
         double z=stepz*(1-cos(t));
         //右边
-        end_effector_pose_rm_now.p.data[0]=end_effector_pose_rmstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*3-x*0.2;
+        end_effector_pose_rm_now.p.data[1]=end_effector_pose_rmstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*3-y*0.2;
         end_effector_pose_rm_now.p.data[2]=end_effector_pose_rmstart.p.data[2];
         int rc_rm = tracik_rm_solver.CartToJnt(result_rmlast, end_effector_pose_rm_now, result_rmnow);
 
-        end_effector_pose_rf_now.p.data[0]=end_effector_pose_rfstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*5+x;
+        end_effector_pose_rf_now.p.data[1]=end_effector_pose_rfstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*5+y;
         end_effector_pose_rf_now.p.data[2]=end_effector_pose_rfstart.p.data[2]+z;
         int rc_rf = tracik_rf_solver.CartToJnt(result_rflast, end_effector_pose_rf_now, result_rfnow);
         print_frame_lambda(end_effector_pose_rf_now);
 
-        end_effector_pose_lf_now.p.data[0]=end_effector_pose_lfstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*2-x*0.2;
+        end_effector_pose_lf_now.p.data[1]=end_effector_pose_lfstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*2-y*0.2;
         end_effector_pose_lf_now.p.data[2]=end_effector_pose_lfstart.p.data[2];
         int rc_lf = tracik_lf_solver.CartToJnt(result_lflast, end_effector_pose_lf_now, result_lfnow);
 
-        end_effector_pose_lm_now.p.data[0]=end_effector_pose_lmstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*0-x*0.2;
+        end_effector_pose_lm_now.p.data[1]=end_effector_pose_lmstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*0-y*0.2;
         end_effector_pose_lm_now.p.data[2]=end_effector_pose_lmstart.p.data[2];
         int rc_lm = tracik_lm_solver.CartToJnt(result_lmlast, end_effector_pose_lm_now, result_lmnow);
 
-        end_effector_pose_lb_now.p.data[0]=end_effector_pose_lbstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*1-x*0.2;
+        end_effector_pose_lb_now.p.data[1]=end_effector_pose_lbstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*1-y*0.2;
         end_effector_pose_lb_now.p.data[2]=end_effector_pose_lbstart.p.data[2];
         int rc_lb = tracik_lb_solver.CartToJnt(result_lblast, end_effector_pose_lb_now, result_lbnow);
 
-        end_effector_pose_rb_now.p.data[0]=end_effector_pose_rbstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*4-x*0.2;
+        end_effector_pose_rb_now.p.data[1]=end_effector_pose_rbstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*4-y*0.2;
         end_effector_pose_rb_now.p.data[2]=end_effector_pose_rbstart.p.data[2];
         int rc_rb= tracik_rb_solver.CartToJnt(result_rblast, end_effector_pose_rb_now, result_rbnow);
 
@@ -951,31 +951,31 @@ int main(int argc,char* argv[])
     for(int i=1;i<=20;i++)
     { 
         double t=2*pi*i/20;
-        double x=stepx*(t-sin(t));
+        double y=stepx*(t-sin(t));
         double z=stepz*(1-cos(t));
         //右边
-        end_effector_pose_rm_now.p.data[0]=end_effector_pose_rmstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*4-x*0.2;
+        end_effector_pose_rm_now.p.data[1]=end_effector_pose_rmstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*4-y*0.2;
         end_effector_pose_rm_now.p.data[2]=end_effector_pose_rmstart.p.data[2];
         int rc_rm = tracik_rm_solver.CartToJnt(result_rmlast, end_effector_pose_rm_now, result_rmnow);
 
-        end_effector_pose_rf_now.p.data[0]=end_effector_pose_rfstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*0-x*0.2;
+        end_effector_pose_rf_now.p.data[1]=end_effector_pose_rfstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*0-y*0.2;
         end_effector_pose_rf_now.p.data[2]=end_effector_pose_rfstart.p.data[2];
         int rc_rf = tracik_rf_solver.CartToJnt(result_rflast, end_effector_pose_rf_now, result_rfnow);
         print_frame_lambda(end_effector_pose_rf_now);
 
-        end_effector_pose_lf_now.p.data[0]=end_effector_pose_lfstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*3-x*0.2;
+        end_effector_pose_lf_now.p.data[1]=end_effector_pose_lfstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*3-y*0.2;
         end_effector_pose_lf_now.p.data[2]=end_effector_pose_lfstart.p.data[2];
         int rc_lf = tracik_lf_solver.CartToJnt(result_lflast, end_effector_pose_lf_now, result_lfnow);
 
-        end_effector_pose_lm_now.p.data[0]=end_effector_pose_lmstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*1-x*0.2;
+        end_effector_pose_lm_now.p.data[1]=end_effector_pose_lmstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*1-y*0.2;
         end_effector_pose_lm_now.p.data[2]=end_effector_pose_lmstart.p.data[2];
         int rc_lm = tracik_lm_solver.CartToJnt(result_lmlast, end_effector_pose_lm_now, result_lmnow);
 
-        end_effector_pose_lb_now.p.data[0]=end_effector_pose_lbstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*2-x*0.2;
+        end_effector_pose_lb_now.p.data[1]=end_effector_pose_lbstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*2-y*0.2;
         end_effector_pose_lb_now.p.data[2]=end_effector_pose_lbstart.p.data[2];
         int rc_lb = tracik_lb_solver.CartToJnt(result_lblast, end_effector_pose_lb_now, result_lbnow);
 
-        end_effector_pose_rb_now.p.data[0]=end_effector_pose_rbstart.p.data[0]+stepx*pi-2*stepx*pi*0.2*5+x;
+        end_effector_pose_rb_now.p.data[1]=end_effector_pose_rbstart.p.data[1]+stepx*pi-2*stepx*pi*0.2*5+y;
         end_effector_pose_rb_now.p.data[2]=end_effector_pose_rbstart.p.data[2]+z;
         int rc_rb= tracik_rb_solver.CartToJnt(result_rblast, end_effector_pose_rb_now, result_rbnow);
 
@@ -1062,9 +1062,9 @@ int main(int argc,char* argv[])
         result_rblast=result_rbnow;
         r.sleep();
     }
-	// fclose(fp);
-	// for(int i=0;i<=1000;i++)
-	// 	r.sleep();
+	fclose(fp);
+	for(int i=0;i<=1000;i++)
+		r.sleep();
     }
     return 0;
  
