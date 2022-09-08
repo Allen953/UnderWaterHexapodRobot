@@ -194,6 +194,35 @@ void loop() {
           delay(10);
       }
     }
+    else if(cmd == 'f')//右横移前进
+    {
+      for(int j=0;j<120;j++)
+      {
+          for(int i=0;i<16;i++)
+          {
+            pwm.setPWM(i, 0, map(forwardFHer[j][i]*direct[i],-90,90,-225,225)+rec[i]);
+            
+          }
+          pwm1.setPWM(16-16, 0, map(forwardFHer[j][16]*direct[16],-90,90,-225,225)+rec[16]);
+          pwm1.setPWM(17-16, 0, map(forwardFHer[j][17]*direct[17],-90,90,-225,225)+rec[17]);
+          delay(10);
+      }
+    }
+    else if(cmd == 'g')//左横移前进
+    {
+      for(int j=0;j<120;j++)
+      {
+          for(int i=0;i<16;i++)
+          {
+            pwm.setPWM(i, 0, map(forwardFHer[119-j][i]*direct[i],-90,90,-225,225)+rec[i]);
+            
+          }
+          pwm1.setPWM(16-16, 0, map(forwardFHer[119-j][16]*direct[16],-90,90,-225,225)+rec[16]);
+          pwm1.setPWM(17-16, 0, map(forwardFHer[119-j][17]*direct[17],-90,90,-225,225)+rec[17]);
+          delay(10);
+      }      
+      
+    }
     else
     {
       delay(100);
